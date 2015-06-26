@@ -18,6 +18,8 @@ $fa-font-path: "/bower_components/font-awesome/fonts";
 // Component styles are injected through grunt
 // injector
 @import 'exercise/exercise.scss';
+@import 'flightControls/flightControls.scss';
+@import 'flightDisplay/flightDisplay.scss';
 @import 'main/main.scss';
 @import 'modal/modal.scss';
 // endinjector
