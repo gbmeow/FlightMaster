@@ -26,6 +26,10 @@ angular.module('flightMasterApp')
         setup();
 
 
+        scope.you = function(number) {
+          scope.$parent.showNextScene(number);
+        }
+
 
 
         function convertRudderValueFn(value) {
@@ -38,7 +42,6 @@ angular.module('flightMasterApp')
         }
 
         function stepOnTheBallFn(operation, direction) {
-
           if (direction === 'left') {
             direction = 'normal';
           }

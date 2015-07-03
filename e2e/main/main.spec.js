@@ -1,16 +1,36 @@
 'use strict';
+var Questionaire = require('../pages/questionaire');
 
 describe('Main View', function() {
   var page;
 
   beforeEach(function() {
-    browser.get('/');
-    page = require('./main.po');
+    page = new Questionaire();
+    page.go();
   });
 
-  it('should include jumbotron with correct data', function() {
-    expect(page.h1El.getText()).toBe('\'Allo, \'Allo!');
-    expect(page.imgEl.getAttribute('src')).toMatch(/assets\/images\/yeoman.png$/);
-    expect(page.imgEl.getAttribute('alt')).toBe('I\'m Yeoman');
+  it('should enter an option', function() {
+    //browser.driver.manage().window().maximize();
+
+    var viewableQuestions = 3 - 1;
+    var total = 36;
+    while (total >= 0) {
+      answerThreeQuestions();
+      total = total - 3;
+    }
+    function answerThreeQuestions() {
+      for (var i = 0; i <= viewableQuestions; i++) {
+
+        page.selectAnswerForQuestion(i, getRandomAnswer());
+        expect(true).toBe(true);
+      }
+    }
+    function getRandomAnswer() {
+      return Math.floor(Math.random() * (5 - 0)) + 0;
+    }
+
   });
+
+
+
 });

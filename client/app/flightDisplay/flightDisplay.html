@@ -1,17 +1,9 @@
 <div class="">
 
-  <img ng-src="{{currentImage}}" ng-class="currentClass"/>
-
-  <div ng-if="!currentClass">
-    <img ng-class="currentClass" src="http://s13.postimg.org/j6c4kcu2f/PLANE_8_L.png" id="gplane" class="plane"/>
-  </div>
-
-  <img ng-class="currentClass" src="http://s13.postimg.org/j6c4kcu2f/PLANE_8_L.png" id="gplane" class="plane"/>
-  <img spinner ng-if="currentClass === 'plane-spinning'" done="isDone()"
-       src="http://s13.postimg.org/j6c4kcu2f/PLANE_8_L.png" id="gplane" class="plane"/>
-
-  <p class="alert alert-info" role="alert">{{toolTip}}</p>
-
-  <div class="target" ng-if="currentClass"/>
+  <img ng-class="currentClass"
+       ng-src="{{plane}}"
+       id="gplane"
+       class="plane"
+    />
 
 </div>

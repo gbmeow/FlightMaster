@@ -1,3 +1,128 @@
 
-.dashboard-controls {
+.plane {
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  -webkit-transform: rotateZ(180deg);
+  /*TODO Get plane with deflected rudder */
+}
+
+.plane-falling {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: planeFallingDown;
+  -webkit-animation-iteration-count: 1;
+  animation-name: planeFallingDown;
+}
+
+.plane-spinning {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: planeSpinRight;
+  -webkit-animation-iteration-count: 5;
+  animation-name: planeSpinRight;
+}
+
+.plane-flying {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: bounceInLeft;
+  animation-name: bounceInLeft;
+}
+
+
+.controlcolumn[type="range"] {
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  position: relative;
+  top: 70px;
+}
+
+.btn1 {
+  color : rgb(49, 46, 46);
+  background-color: rgba(255, 222, 121, 0.96);
+  border-radius: 10px 0 0 10px;
+  font-size: 16px;
+}
+
+.bounceInLeft {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  -webkit-animation-name: bounceInLeft;
+  animation-name: bounceInLeft;
+}
+
+.target {
+  position: relative;
+  top: -50px;
+  left: 400px;
+  width: 200px;
+  height: 50px;
+  background: green;
+}
+
+
+/*
+  ANIMATIONS
+*/
+
+@keyframes planeFallingDown {
+  to {
+    -webkit-transform: translateY(50em);
+  }
+}
+
+
+@keyframes planeSpinRight {
+  0% {
+    -webkit-transform: rotateZ(120deg) translateX(-10em);
+  }
+  40% {
+    -webkit-transform: rotateZ(150deg) translateX(1em) translateY(18em);
+  }
+  100% {
+    -webkit-transform: rotateZ(220deg) translateX(25em) translateY(1em);
+  }
+}
+
+/*
+From Animate.css - http://daneden.me/animate
+*/
+
+@keyframes bounceInLeft {
+  0%, 60%, 75%, 90%, 100% {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(25px, 0, 0);
+    transform: translate3d(25px, 0, 0);
+  }
+
+  75% {
+    -webkit-transform: translate3d(200px, 0, 0);
+    transform: translate3d(200px, 0, 0);
+  }
+
+  90% {
+    -webkit-transform: translate3d(410px, 0, 0);
+    transform: translate3d(410px, 0, 0);
+  }
+
+  100% {
+    -webkit-transform: translate3d(510px, 0, 0);
+    transform: translate3d(410px, 0, 0);
+  }
 }
