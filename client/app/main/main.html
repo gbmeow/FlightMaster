@@ -7,6 +7,16 @@
   </div>
 </header>
 
+Model {{main.date | json}}
+
+<br />From <br />
+<date-range ng-model="main.date.from" ></date-range>
+<br />To <br />
+<date-range ng-model="main.date.to"></date-range>
+
+
+
+
 <!--<div class="container">-->
   <!--<div class="row">-->
     <!--<div class="col-lg-12">-->
@@ -18,37 +28,37 @@
   <!--</div>-->
 
 
-<div class="d--wrapper">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-12">
-        <ul id="parent">
-          <li class="matchmaker-card" ng-repeat="qu in main.questions track by qu.questionId | limitTo: '3'">
-            <p>{{qu.questionId}}</p>
-            <p>{{qu.title}}</p>
-            <div class="answers">
-              <ul class="smiley-radiobutton--wrapper">
-                <li class="smiley-radiobutton" ng-repeat="answer in main.answerOptions">
-                  <label class="smiley-radiobutton__label"
-                         for="like-vm{{qu.questionId}}{{$index}}">
-                    <input type="radio" id="like-vm{{qu.questionId}}{{$index}}"
-                           ng-change="main.save(qu.questionId, answer.id)"
-                           ng-model="main.nomodel[$parent.$index]"
-                           value="{{answer.id}}"
-                           name="{{qu.questionId}}"/>
-                    <i class="icon-face-{{answer.id | lowercase}}"></i>{{answer.text}}
-                  </label>
-                </li>
-              </ul>
-            </div>
+<!--<div class="d&#45;&#45;wrapper">-->
+  <!--<div class="container-fluid">-->
+    <!--<div class="row">-->
+      <!--<div class="col-sm-12">-->
+        <!--<ul id="parent">-->
+          <!--<li class="matchmaker-card" ng-repeat="qu in main.questions track by qu.questionId | limitTo: '3'">-->
+            <!--<p>{{qu.questionId}}</p>-->
+            <!--<p>{{qu.title}}</p>-->
+            <!--<div class="answers">-->
+              <!--<ul class="smiley-radiobutton&#45;&#45;wrapper">-->
+                <!--<li class="smiley-radiobutton" ng-repeat="answer in main.answerOptions">-->
+                  <!--<label class="smiley-radiobutton__label"-->
+                         <!--for="like-vm{{qu.questionId}}{{$index}}">-->
+                    <!--<input type="radio" id="like-vm{{qu.questionId}}{{$index}}"-->
+                           <!--ng-change="main.save(qu.questionId, answer.id)"-->
+                           <!--ng-model="main.nomodel[$parent.$index]"-->
+                           <!--value="{{answer.id}}"-->
+                           <!--name="{{qu.questionId}}"/>-->
+                    <!--<i class="icon-face-{{answer.id | lowercase}}"></i>{{answer.text}}-->
+                  <!--</label>-->
+                <!--</li>-->
+              <!--</ul>-->
+            <!--</div>-->
 
-          </li>
+          <!--</li>-->
 
-        </ul>
-        </div>
-      </div>
-    </div>
-  </div>
+        <!--</ul>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
 
 
 <footer class="footer">
